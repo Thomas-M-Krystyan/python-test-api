@@ -63,7 +63,7 @@ chmod +x setup.sh
 
 ### Welcome Message
 ```bash
-curl http://localhost:5000/
+curl -X GET http://localhost:5000/
 ```
 
 ### Chat Completion (OpenAI-style)
@@ -79,7 +79,7 @@ curl -X POST http://localhost:5000/api/chat \
 
 ### Status Check
 ```bash
-curl http://localhost:5000/api/status
+curl -X GET http://localhost:5000/api/status
 ```
 
 ## Browser Testing

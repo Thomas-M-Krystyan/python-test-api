@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 # Create Flask application instance
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def welcome():
     """The initial welcome endpoint"""
 
@@ -49,7 +49,7 @@ def chat():
         }
     })
 
-@app.route('/api/status')
+@app.route('/api/status', methods=['GET'])
 def status():
     """API status endpoint"""
 
