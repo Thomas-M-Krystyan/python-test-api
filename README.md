@@ -1,6 +1,6 @@
-# Flask Hello World API
+# Flask Test API
 
-A simple "Hello World" API built with Flask.
+A simple Flask test API with welcome and status endpoints.
 
 ## Features
 
@@ -11,7 +11,7 @@ A simple "Hello World" API built with Flask.
 
 ## Endpoints
 
-- `GET /` - Basic Hello World message
+- `GET /` - Welcome message to Flask test API
 - `GET /api/hello` - API Hello World message
 - `GET /api/status` - API status information
 
@@ -60,7 +60,7 @@ chmod +x setup.sh
 
 ## Usage Examples
 
-### Basic Hello World
+### Welcome Message
 ```bash
 curl http://localhost:5000/
 ```
