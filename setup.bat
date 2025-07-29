@@ -16,5 +16,5 @@ echo Setup complete! To run the application:
 echo 1. Activate the virtual environment: .venv\Scripts\activate
 echo 2. Run the app: python app.py
 echo.
-echo Or simply run: .venv\Scripts\python.exe app.py
+echo Or simply run: [...]/python-test-api/.venv/Scripts/python.exe app.py
 pause
