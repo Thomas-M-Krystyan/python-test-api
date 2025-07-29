@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 # Create Flask application instance
 app = Flask(__name__)
@@ -12,14 +12,41 @@ def welcome():
         "status": "success"
     })
 
-@app.route('/api/hello')
-def hello_api():
-    """API endpoint for Hello World"""
-
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    """OpenAI chat completion interface endpoint"""
+    
+    # Get the request data
+    data = request.get_json()
+    
+    # Basic validation
+    if not data or 'messages' not in data:
+        return jsonify({
+            "error": {
+                "message": "Missing required field: messages",
+                "type": "invalid_request_error"
+            }
+        }), 400
+    
+    # Mock response following OpenAI format
     return jsonify({
-        "message": "Hello from Flask API!",
-        "endpoint": "/api/hello",
-        "method": "GET"
+        "id": "chatcmpl-test123",
+        "object": "chat.completion",
+        "created": 1627846261,
+        "model": "flask-test-model",
+        "choices": [{
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "This is a mocked response! Your chat endpoint was successfully called. No real OpenAI integration is configured yet."
+            },
+            "finish_reason": "stop"
+        }],
+        "usage": {
+            "prompt_tokens": 10,
+            "completion_tokens": 20,
+            "total_tokens": 30
+        }
     })
 
 @app.route('/api/status')
